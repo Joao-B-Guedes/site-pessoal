@@ -1,0 +1,16 @@
+# Arquivos de sistema operacional
+.DS_Store
+Thumbs.db
+
+# Configurações locais do editor (specíficas da sua máquina)
+.vscode/
+
+# Caso algum dia use ferramentas de build/node
+node_modules/
+dist/
+
+# Logs
+*.log
+
+# Pasta com arquivos para consulta
+consultas/
