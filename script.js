@@ -9,17 +9,17 @@ const blocos = [
             ]
         }
     },
-      {
-    comando: "ls projetos/",
-    saida: {
-      type: "list",
-      linhas: [
-        "rpg-portfolio/     → devlog do jogo que estou construindo",
-        "homelab-notas/     → anotações de infra e redes",
-        "curiosidades/      → achados soltos, sem compromisso"
-      ]
-    }
-  }
+    {
+        comando: "ls projetos/",
+        saida: {
+            type: "folders",
+            pastas: [
+                {nome: "rpg-portfolio/", descricao: "devlog do jogo que estou construindo"},
+                {nome: "homelab-notas/", descricao: "anotações de infra e redes"},
+                {nome: "curiosidades/", descricao: "achados soltos, sem compromisso"}
+                ]
+            }
+        }
 ];
 
 // ==========================================================
@@ -59,7 +59,7 @@ function digitar(elemento, texto, callback) {
 
 function renderSaida(saida) {
     const container = document.createElement("div");
-    container.className = "output";
+    container.className = "output"; 
 
     if (saida.type == "text" || saida.type == "list") {
         saida.linhas.forEach((linha) => {
@@ -80,6 +80,25 @@ function renderSaida(saida) {
         });   
     }
 
+    if (saida.type === "folders") {
+        saida.pastas.forEach((pasta) => {
+            const div = document.createElement("div");
+            //div.className = "folder-item";
+
+            const nome = document.createElement("span");
+            nome.className = "folder-name";
+            nome.textContent = pasta.nome;
+
+            const descricao = document.createElement("span");
+            //descricao.className = "folder-desc";
+            descricao.textContent = " → " + pasta.descricao;
+
+            div.appendChild(nome);
+            div.appendChild(descricao);
+            container.appendChild(div);
+        });
+    }
+
     corpo.appendChild(container);
 }
 
@@ -90,11 +109,16 @@ function rodarBloco(index) {
     const linhaComando = document.createElement("p");
     const prompt = document.createElement("span");
     prompt.className = "prompt";
-    prompt.textContent = "$";
+    prompt.textContent = "$ ";
     linhaComando.appendChild(prompt);
+    
+    const comandoTexto = document.createElement("span");
+    comandoTexto.className = "command";
+    linhaComando.appendChild(comandoTexto);
+
     corpo.appendChild(linhaComando);
 
-    digitar(linhaComando, bloco.comando, () => {
+    digitar(comandoTexto, bloco.comando, () => {
         renderSaida(bloco.saida);
         setTimeout(() => rodarBloco(index + 1), 300);
     });
