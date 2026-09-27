@@ -65,6 +65,7 @@ color: #50fa7b;
 .output{
 color: #f8f8f2;
 margin-bottom: 14px;
+white-space: pre-line;
 }
 
 .command{
@@ -74,4 +75,9 @@ font-weight: 700;
 
 .folder-name{
     color: #bd93f9;
+}
+
+.link {
+color: #8be9fd;
+text-decoration: none;
 }

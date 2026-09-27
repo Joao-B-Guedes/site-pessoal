@@ -1,30 +1,8 @@
-const blocos = [
-    {
-        comando: "whoami",
-        saida: {
-            type: "text",
-            linhas: [
-                "joao - infraestrutura de TI & redes",
-                "Trabalho com Linux, redes e sistemas no dia a dias."
-            ]
-        }
-    },
-    {
-        comando: "ls projetos/",
-        saida: {
-            type: "folders",
-            pastas: [
-                {nome: "rpg-portfolio/", descricao: "devlog do jogo que estou construindo"},
-                {nome: "homelab-notas/", descricao: "anotações de infra e redes"},
-                {nome: "curiosidades/", descricao: "achados soltos, sem compromisso"}
-                ]
-            }
-        }
-];
-
 // ==========================================================
 // Lógica da animação
 // ==========================================================
+import blocos from "./content.js";
+
 
 const corpo = document.getElementById("terminal-body");
 const VELOCIDADE_DIGITACAO = 35; // ms por caractere
@@ -68,7 +46,7 @@ function renderSaida(saida) {
     }
 
     if (saida.type =="links") {
-        saida.linha.forEach((item) => {
+        saida.linhas.forEach((item) => {
             const a = document.createElement("a");
             a.href = item.url;
             a.textContent = item.texto;
