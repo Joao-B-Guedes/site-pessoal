@@ -56,6 +56,8 @@ font-size: 15px;
 line-height: 1.9;
 color: #f8f8f2;
 min-height: 320px;
+display: flex;
+flex-direction: column;
 }
 
 .prompt{
@@ -80,4 +82,18 @@ font-weight: 700;
 .link {
 color: #8be9fd;
 text-decoration: none;
+}
+
+.back-link {
+color: #f8f8f2;
+font-weight: 700;
+text-decoration: none;
+}
+
+.back-link:hover {
+text-decoration: underline;
+}
+
+.back-line {
+  order: 9999;
 }
