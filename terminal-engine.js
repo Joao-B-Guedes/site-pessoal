@@ -90,9 +90,32 @@ export function renderSaida(container, saida) {
   }
 }
 
-export function rodarBlocos(blocos, corpo){
+export function backPage(container){
+    const div = document.createElement("div");
+    div.className = "back-line";
+
+    const prompt = document.createElement("span");
+    prompt.className = "prompt";
+    prompt.textContent = "$ ";
+
+    const backLink = document.createElement("a");
+    backLink.className = "back-link";
+    backLink.textContent ="cd..";
+    backLink.href = "../index.html";
+
+    div.appendChild(prompt);
+    div.appendChild(backLink);
+
+    container.appendChild(div);
+}
+
+export function rodarBlocos(blocos, corpo, mostrarVoltar = false){
     function rodarBloco(index) {
-        if (index >= blocos.length) return;
+        if (index >= blocos.length) {
+            if (mostrarVoltar) backPage(corpo);
+            
+            return;
+        }
 
         const bloco = blocos[index];
         const linhaComando = document.createElement("p");
