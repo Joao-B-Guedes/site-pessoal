@@ -90,10 +90,6 @@ font-weight: 700;
 text-decoration: none;
 }
 
-/*.back-link:hover {
+.back-link:hover {
 text-decoration: underline;
-}*/
-
-/*.back-line {
-  order: 9999;
-}8/
+}

@@ -5,7 +5,7 @@ export const homelab = {
       type: "updates",
       entradas: [
         {
-          data: "XX/XX/2026",
+          data: "08/10/2026",
           linhas: [
                   `Começou com uma vontade de ter uma máquina dedicada para retrogames em minha sala, para poder jogar no conforto do sofá e com visitas.
                   A vontade virou um entusiasmo que se transformou em uma ideia maior. Por que não colocar mais serviços, já que tenho uma máquina ociosa? E assim surgiu minha primeira exposição ao Docker e seus containers.
