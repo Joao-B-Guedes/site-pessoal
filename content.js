@@ -16,7 +16,7 @@ export const blocos = [
             type: "folders",
             pastas: [
                 //{nome: "rpg-portfolio/", descricao: "devlog do jogo que estou construindo"},
-                {nome: "homelab/", descricao: "anotações de infra e redes", href: "projects/homelab.html"},
+                {nome: "homelab/", descricao: "devlog do meu servidor caseiro", href: "projects/homelab.html"},
                 //{nome: "curiosidades/", descricao: "achados soltos, sem compromisso"}
             ]
         }
